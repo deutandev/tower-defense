@@ -141,15 +141,15 @@ Transform:
   m_Children:
   - {fileID: 1966022993}
   - {fileID: 1844821804}
+  - {fileID: 594751698}
+  - {fileID: 2040132540}
   - {fileID: 778508662}
   - {fileID: 606020292}
   - {fileID: 1677892585}
-  - {fileID: 1126626452}
-  - {fileID: 2071540124}
-  - {fileID: 594751698}
-  - {fileID: 2040132540}
   - {fileID: 1914255955}
   - {fileID: 276679905}
+  - {fileID: 1126626452}
+  - {fileID: 2071540124}
   m_Father: {fileID: 1689132660}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -218,7 +218,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 162005226}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &276679906
 SpriteRenderer:
@@ -377,6 +377,8 @@ GameObject:
   m_Component:
   - component: {fileID: 321427772}
   - component: {fileID: 321427773}
+  - component: {fileID: 321427775}
+  - component: {fileID: 321427774}
   m_Layer: 0
   m_Name: tower_placement (2)
   m_TagString: Untagged
@@ -446,6 +448,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &321427774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321427771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eabef375a3eb8fe388eed820ca2094a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &321427775
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321427771}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.28}
+  m_EdgeRadius: 0
 --- !u!1 &496851123
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +496,8 @@ GameObject:
   m_Component:
   - component: {fileID: 496851124}
   - component: {fileID: 496851125}
+  - component: {fileID: 496851127}
+  - component: {fileID: 496851126}
   m_Layer: 0
   m_Name: tower_placement (1)
   m_TagString: Untagged
@@ -525,6 +567,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &496851126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496851123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eabef375a3eb8fe388eed820ca2094a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &496851127
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496851123}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.28}
+  m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,7 +716,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 162005226}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &594751699
 SpriteRenderer:
@@ -715,7 +795,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 162005226}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &606020293
 SpriteRenderer:
@@ -794,7 +874,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 162005226}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &778508663
 SpriteRenderer:
@@ -873,7 +953,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 162005226}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1126626453
 SpriteRenderer:
@@ -933,6 +1013,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1337203511}
   - component: {fileID: 1337203512}
+  - component: {fileID: 1337203514}
+  - component: {fileID: 1337203513}
   m_Layer: 0
   m_Name: tower_placement (4)
   m_TagString: Untagged
@@ -1002,6 +1084,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1337203513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337203510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eabef375a3eb8fe388eed820ca2094a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1337203514
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337203510}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.28}
+  m_EdgeRadius: 0
 --- !u!1 &1370532320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1251,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 162005226}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1677892586
 SpriteRenderer:
@@ -1281,6 +1401,22 @@ MonoBehaviour:
   - {fileID: 1786022747720933553, guid: 4662ef70745c26a33b9c429f9595f9a9, type: 3}
   - {fileID: 4127354111070653942, guid: f914d7c06ca00957d83131cc5a8d6922, type: 3}
   - {fileID: 4679952959722724325, guid: 9c4acedaa1673b75eb238ea845835637, type: 3}
+  _enemyPrefabs:
+  - {fileID: 2021245806168580498, guid: c5baf75c2e8b49975b18e42c919abc26, type: 3}
+  - {fileID: 249978611687159583, guid: 722ce72dd40cd409a98ab70a1594c8f6, type: 3}
+  _enemyPaths:
+  - {fileID: 1966022993}
+  - {fileID: 1844821804}
+  - {fileID: 594751698}
+  - {fileID: 2040132540}
+  - {fileID: 778508662}
+  - {fileID: 606020292}
+  - {fileID: 1677892585}
+  - {fileID: 1914255955}
+  - {fileID: 276679905}
+  - {fileID: 1126626452}
+  - {fileID: 2071540124}
+  _spawnDelay: 5
 --- !u!1 &1762497828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,7 +1621,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 162005226}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &1914255956
 SpriteRenderer:
@@ -1624,6 +1760,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1993341228}
   - component: {fileID: 1993341229}
+  - component: {fileID: 1993341231}
+  - component: {fileID: 1993341230}
   m_Layer: 0
   m_Name: tower_placement (3)
   m_TagString: Untagged
@@ -1693,6 +1831,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1993341230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993341227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eabef375a3eb8fe388eed820ca2094a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1993341231
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993341227}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.28}
+  m_EdgeRadius: 0
 --- !u!1 &2040132539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,7 +1898,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 162005226}
-  m_RootOrder: 8
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &2040132541
 SpriteRenderer:
@@ -1801,7 +1977,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 162005226}
-  m_RootOrder: 6
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2071540125
 SpriteRenderer:
