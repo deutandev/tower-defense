@@ -8,6 +8,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject _towerUIPrefab;
     [SerializeField] private Tower[] _towerPrefabs;
 
+    // Added in "drag n Drop"
+    private List<Tower> _spawnedTowers = new List<Tower> ();
+
     // Singleton function
     private static LevelManager _instance = null;
     public static LevelManager Instance
@@ -46,5 +49,12 @@ public class LevelManager : MonoBehaviour
             newTowerUI.SetTowerPrefab (tower);
             newTowerUI.transform.name = tower.name;
         }
+    }
+
+    // Registering spawned Tower to be controlled by LevelManager
+    public void RegisterSpawnedTower (Tower tower)
+
+    {
+        _spawnedTowers.Add (tower);
     }
 }

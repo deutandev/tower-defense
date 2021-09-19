@@ -15,6 +15,11 @@ public class Tower : MonoBehaviour
     [SerializeField] private float _bulletSpeed = 1f;
     [SerializeField] private float _bulletSplashRadius = 0f;
 
+    // save the position to be occupied while the tower is dragged
+    public Vector2? PlacePosition { get; private set; }
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +31,26 @@ public class Tower : MonoBehaviour
     {
         
     }
-    
+
+    public void SetPlacePosition (Vector2? newPosition)
+    {
+        PlacePosition = newPosition;
+    }
+
+    // Added in "Drag n Drop"
+    public void LockPlacement ()
+    {
+        transform.position = (Vector2) PlacePosition;
+    }
+
+    // change order in layer of on drag Tower
+    public void ToggleOrderInLayer (bool toFront)
+    {
+        int orderInLayer = toFront ? 2 : 0;
+        _towerPlace.sortingOrder = orderInLayer;
+        _towerHead.sortingOrder = orderInLayer;
+    }
+
     public Sprite GetTowerHeadIcon ()
     {
         return _towerHead.sprite;
