@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 825450330198186649}
   - component: {fileID: 2148512744010846757}
   - component: {fileID: 4126528014274428734}
+  - component: {fileID: 114361613979987992}
   m_Layer: 5
   m_Name: TowerUI
   m_TagString: Untagged
@@ -218,3 +219,16 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &114361613979987992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8257360204998133143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691c088b51d170511a1abe52bf4adb38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerIcon: {fileID: 6024003965390148031}
