@@ -67,6 +67,16 @@ public class Enemy : MonoBehaviour
         _healthBar.transform.parent = transform;
     }
 
+    // Added in "Tower Attacking Enemy"
+    public void ReduceEnemyHealth (int damage)
+    {
+        _currentHealth -= damage;
+        if (_currentHealth <= 0)
+        {
+            gameObject.SetActive (false);
+        }
+    }
+
     // Mark last index on path
     public void SetCurrentPathIndex (int currentIndex)
     {
