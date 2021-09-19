@@ -24,10 +24,11 @@ public class LevelManager : MonoBehaviour
     private List<Bullet> _spawnedBullets = new List<Bullet> ();
 
     private float _runningSpawnDelay;
-
-    // Added in "Enemy following path"
+    // Added in "Win/lose condition"
     private int _currentLives;
     private int _enemyCounter;
+
+    // Added in "Win/Lose condition"
     public bool IsOver { get; private set; }
 
     // Singleton function
@@ -47,15 +48,38 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    // Added in "Win/Lose condition"
+    [SerializeField] private int _maxLives = 3;
+    [SerializeField] private int _totalEnemy = 15;
+    [SerializeField] private GameObject _panel;
+    [SerializeField] private Text _statusInfo;
+    [SerializeField] private Text _livesInfo;
+    [SerializeField] private Text _totalEnemyInfo;
+
     // Start is called before the first frame update
     void Start()
     {
+        // Added in "Win/lose condition"
+        SetCurrentLives (_maxLives);
+        SetTotalEnemy (_totalEnemy);
         InstantiateAllTowerUI ();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Added in "Win/Lose condition"
+        // If R key pressed, call restart function
+        if (Input.GetKeyDown (KeyCode.R))
+        {
+            SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+        }
+
+        if (IsOver)
+        {
+            return;
+        }
+
         // Counter untuk spawn enemy dalam jeda waktu yang ditentukan
         // Time.unscaledDeltaTime adalah deltaTime yang independent, tidak terpengaruh oleh apapun kecuali game object itu sendiri,
         // jadi bisa digunakan sebagai penghitung waktu
@@ -124,6 +148,19 @@ public class LevelManager : MonoBehaviour
     // Added in "Enemy following path"
     private void SpawnEnemy ()
     {
+        // Added in "Win/Lose condition"
+         SetTotalEnemy (--_enemyCounter);
+        if (_enemyCounter < 0)
+        {
+            bool isAllEnemyDestroyed = _spawnedEnemies.Find (e => e.gameObject.activeSelf) == null;
+            if (isAllEnemyDestroyed)
+            {
+                SetGameOver (true);
+            }
+
+            return;
+        }
+
         int randomIndex = Random.Range (0, _enemyPrefabs.Length);
         string enemyIndexString = (randomIndex + 1).ToString ();
 
@@ -182,6 +219,38 @@ public class LevelManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    // Added in "Win/Lose condition"
+    public void ReduceLives (int value)
+    {
+        SetCurrentLives (_currentLives - value);
+        if (_currentLives <= 0)
+        {
+            SetGameOver (false);
+        }
+    }
+
+    public void SetCurrentLives (int currentLives)
+    {
+        // Mathf.Max fungsi nya adalah mengambil angka terbesar
+        // sehingga _currentLives di sini tidak akan lebih kecil dari 0
+        _currentLives = Mathf.Max (currentLives, 0);
+        _livesInfo.text = $"Lives: {_currentLives}";
+    }
+
+    public void SetTotalEnemy (int totalEnemy)
+    {
+        _enemyCounter = totalEnemy;
+        _totalEnemyInfo.text = $"Total Enemy: {Mathf.Max (_enemyCounter, 0)}";
+    }
+
+    public void SetGameOver (bool isWin)
+    {
+        IsOver = true;
+
+        _statusInfo.text = isWin ? "You Win!" : "You Lose!";
+        _panel.gameObject.SetActive (true);
     }
 
 
