@@ -117,9 +117,9 @@ public class Tower : MonoBehaviour
     // change order in layer of on drag Tower
     public void ToggleOrderInLayer (bool toFront)
     {
-        int orderInLayer = toFront ? 2 : 0;
-        _towerPlace.sortingOrder = orderInLayer;
-        _towerHead.sortingOrder = orderInLayer;
+        // int orderInLayer = toFront ? 2 : 0;
+        // _towerPlace.sortingOrder = orderInLayer;
+        // _towerHead.sortingOrder = orderInLayer;
     }
 
     public Sprite GetTowerHeadIcon ()

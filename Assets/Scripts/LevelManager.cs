@@ -116,6 +116,8 @@ public class LevelManager : MonoBehaviour
                 }
                 else
                 {
+                    // Reduce lives
+                    ReduceLives(1);
                     enemy.gameObject.SetActive (false);
                 }
             }
